@@ -16,11 +16,13 @@ public class TimeService implements Serializable {
 
 	public List<TimeDTO> findAll() {
 		List<TimeEntitie> list = timeRepository.findAll();
-		return list.stream().map(x -> new TimeDTO(x)).collect(Collectors.toList());
+		return list.stream().map(x -> new TimeDTO(x))
+				.collect(Collectors.toList());
 	}
 
 	public TimeDTO insert(TimeDTO dto) {
-		TimeEntitie time = new TimeEntitie(dto.getId(), dto.getNome(), TimeEnum.ATIVO);
+		TimeEntitie time = new TimeEntitie(dto.getId(),
+				dto.getNome(), TimeEnum.ATIVO);
 		time = timeRepository.save(time);
 		return new TimeDTO(time);
 	}

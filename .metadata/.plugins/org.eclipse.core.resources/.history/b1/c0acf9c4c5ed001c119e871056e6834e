@@ -1,0 +1,5 @@
+package com.example.camp.config;
+
+public class SwaggerConfig {
+
+}
