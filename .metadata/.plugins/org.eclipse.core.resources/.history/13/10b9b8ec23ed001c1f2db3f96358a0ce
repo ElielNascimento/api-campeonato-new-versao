@@ -1,0 +1,12 @@
+package com.example.camp.time;
+
+import javax.persistence.Id;
+
+public class TimeDTO {
+
+	private Long id;
+	private String nome;
+
+	public TimeDTO() {
+	}
+}

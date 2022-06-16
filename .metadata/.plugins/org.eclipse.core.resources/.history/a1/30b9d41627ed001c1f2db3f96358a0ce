@@ -1,0 +1,23 @@
+package com.example.camp.time;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/times")
+public class TimeController implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	private TimeService timeService;
+
+	private ResponseEntity<List<TimeDTO>> findAll() {
+		List<TimeDTO> list = timeService.findAll();
+		return ResponseEntity.ok().body(list);
+
+	}
+
+}
